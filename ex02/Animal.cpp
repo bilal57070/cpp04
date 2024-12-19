@@ -20,9 +20,9 @@ Animal &Animal::operator=(Animal const &cp){
     return *this;
 }
 
-void    Animal::makeSound() const{
+/*void    Animal::makeSound() const{
     std::cout << "Animal noise" << std::endl;
-}
+}*/
 
 std::string Animal::getType() const{
     return type;
