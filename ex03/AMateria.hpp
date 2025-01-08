@@ -9,10 +9,11 @@
 class AMateria
 {
     protected:
-        std::string type;
+        std::string _type;
     public:
+        AMateria();
         AMateria(std::string const &type);
-
+        ~AMateria();
         std::string const &getType() const;
 
         virtual AMateria* clone() const = 0;
