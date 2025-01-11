@@ -12,6 +12,7 @@ class cure : public AMateria {
         cure& operator=(cure const &cpi);
         cure* clone() const;
         void use(ICharacter& target);
+        std::string const &getType() const;
 
     private:
         std::string _type;

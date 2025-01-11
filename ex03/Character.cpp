@@ -1,4 +1,5 @@
 #include "Character.hpp"
+#include "AMateria.hpp"
 
 Character::Character(){
     name = "default";
@@ -6,7 +7,12 @@ Character::Character(){
         mater[i] = NULL;
 }
 
-Character::~Character(){}
+Character::~Character(){
+    for (int i = 0; i < 4; i++){
+        if (mater[i])
+            delete mater[i];
+    }
+}
 
 Character::Character(std::string name){
     this->name = name;
@@ -38,8 +44,8 @@ void Character::equip(AMateria *m){
             std::cout << getName() << " has equiped materia at place" << i << std::endl;
             return;
         }
-        std::cout << "no place for that materia" << std::endl;
     }
+    std::cout << "no place for that materia" << std::endl;
 }
 
 void    Character::unequip(int idx){
@@ -51,5 +57,9 @@ void    Character::unequip(int idx){
 }
 
 void    Character::use(int idx, ICharacter& target){
-    
+    if (!mater[idx]){
+        std::cout << "nothing equiped here" << std::endl;
+        return;
+    }
+    mater[idx]->use(target);
 }

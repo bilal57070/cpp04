@@ -23,3 +23,7 @@ cure*   cure::clone() const{
 void    cure::use(ICharacter& target){
     std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
+
+std::string const &cure::getType() const{
+    return (_type);
+}

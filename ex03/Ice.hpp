@@ -8,6 +8,7 @@ class ice : public AMateria {
         ice();
         ~ice();
         ice (ice const &cp);
+        std::string const &getType()const;
         ice& operator=(ice const &cp);
         ice* clone() const;
         void use(ICharacter &target);

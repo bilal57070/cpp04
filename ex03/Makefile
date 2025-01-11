@@ -1,4 +1,4 @@
-SRCS =  main.cpp
+SRCS =  main.cpp MateriaSource.cpp Ice.cpp Cure.cpp Character.cpp AMateria.cpp
 OBJS = ${SRCS:.cpp=.o}
 NAME = clap
 CC = c++
